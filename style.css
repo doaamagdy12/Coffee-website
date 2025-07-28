@@ -1,0 +1,723 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: #d2b592;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 50px;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 2px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    background-color: #cdaf97;
+
+
+
+}
+
+
+header .logo
+{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #3e2f1c; 
+
+}
+
+header .logo img
+{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+header nav ul
+{
+    display: flex;
+    gap: 30px;
+
+}
+
+header nav ul li a{
+    font-size: 20px;
+    color:#3e2f1c ;
+    transition: color 0.3s ease;
+
+    position: relative;
+    padding-bottom: 4px;
+}
+
+header nav ul li a:hover
+{
+    color: #714f26;
+    cursor: pointer;
+}
+
+header nav ul li a::after
+{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0px;
+    background: #b2834a;
+
+    transition: all .25s ease;
+}
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+    width:100%;
+}
+
+header .search-icon img
+{
+
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+header .right-side
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#home{
+/* 6 7 */
+    background-image: url("imgs/cover\ 6.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    height: 650px;
+    position: relative;
+
+}
+#home .home-title
+{
+    background-color: rgba(0,0,0,0.5);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    color: azure;
+
+}
+
+#home .home-title h1
+{
+    font-size: 36px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#home .home-title span
+{
+    color: #e8b28a ;
+
+}
+
+#home .home-title button
+{
+    margin-top: 15px;
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    color: #58452d;
+    background-color: #d2b592;
+
+    font-weight: bold;
+    letter-spacing: 1px;
+    
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+
+    transition: all 0.3s ease;
+}
+
+#home .home-title button:hover
+{
+    color:#85551a ;
+    width: 210px;
+    height: 45px;
+    background-color: #c49e78;
+    transform: translateY(-2px);
+}
+
+#Menu , #Blog ,#Media
+{
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.categories
+{
+    padding-bottom: 50px;
+}
+
+#Menu .menu-title h2 , #Menu .dessert-title h2  , #Blog .blog-title h2 ,#Media .Media-title h2
+{
+
+    font-size:  32px;
+    margin-bottom: 10px;
+}
+
+#Menu .menu-title h4 , #Menu .dessert-title h4  ,#Blog .blog-title h4 ,#Media .Media-title h4
+{
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 40px;
+}
+
+
+#Menu .categories-container  {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr); 
+    gap: 25px;
+    justify-items: center; 
+    padding: 0 20px;
+}
+
+#Menu .categories-container .card 
+{
+    position: relative;
+
+    background-color:#a08264;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 180px;
+} 
+
+
+
+#Menu .categories-container .card img 
+{
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+
+    object-fit: cover;
+
+    transition: all 0.5s ease;
+}
+
+#Menu .categories-container .card:hover img
+{
+    transform: scale(1.2, 1.3)
+}
+
+#Menu .categories-container .card .caption
+{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    font-size: 18px;
+
+    text-shadow: 0 0 5px rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#Menu .categories-container .card:hover .caption
+{
+    opacity: 1;
+}
+#Menu .categories-container .card .caption h3 {
+
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+#Menu .categories-container .card .caption p {
+    font-size: 14px;
+    font-weight: 300;
+
+    position: relative;
+    cursor: pointer;
+}
+
+#Menu .categories-container .card .caption p::after
+{
+    content: "";
+    position: absolute;
+
+    bottom: -5px;
+    left: 0;
+    height: 3px;
+    width: 0;
+
+    background-color: white;
+    transition: width 1s ease;
+} 
+
+#Menu .categories-container .card:hover .caption p::after
+{
+    width: 100%;
+}
+
+#Menu .dessert-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+#Menu .dessert-container .card
+{
+    position: relative;
+    width: 260px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0,0.3);
+    cursor: pointer;
+    transition: all 0.5 ease;
+}
+
+#Menu .dessert-container .card:hover
+{
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5); 
+    transform: scale(1.05);
+}
+
+#Menu .dessert-container .card img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: all 0.3s ease;
+}
+
+#Menu .dessert-container .card h3{
+
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    margin: 0;
+    color: #fff;
+    font-size: 22px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.7);
+    z-index: 2;
+}
+
+#Menu .dessert-container .card span
+{
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    color: #ffd8b1;
+    font-size: 14px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+
+#Menu .dessert-container .card:hover span
+{
+    text-decoration: underline;
+} 
+
+#Blog .milkshakes-contanier ,#Media .blog-contanier
+{
+    display: flex;
+    justify-content: center;
+    gap:30px;
+
+    /* flex-wrap: wrap; */
+
+}
+
+#Blog .milkshakes-contanier .card-product
+{
+    width: 200px;
+    border-radius: 10px;
+    background-color: #a08264;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    overflow: hidden;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+#Blog .milkshakes-contanier .card-product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 1);
+}
+
+#Blog .milkshakes-contanier .card-product img
+{
+    width: 100%;
+    object-fit: contain;
+    background-color: #f8f8f8;
+    
+}
+
+#Blog .milkshakes-contanier .card-product .info
+{
+    padding: 15px;
+}
+
+#Blog .milkshakes-contanier .card-product .info h3
+{
+    font-size: 18px;
+    color: #f5ede4;
+    margin-bottom: 8px;
+    
+}
+
+#Blog .milkshakes-contanier .card-product .info .btn
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Blog .milkshakes-contanier .card-product .info .price
+{
+    font-size: 16px;
+    color:  #f4e9dc;
+}
+
+#Blog .milkshakes-contanier .card-product .info button
+{
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f5eee6;
+    color:#3e2f1c;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: all 0.5s ease;
+
+    position:relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.card-product button::before {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.3);
+    transform: skewX(-20deg);
+    transition: left 0.5s;
+    z-index: 1;
+}
+
+.card-product button:hover::before {
+    left: 100%;
+}
+
+#Blog .milkshakes-contanier .card-product .info button:hover
+{
+    background-color: #d1b38a;
+}
+
+#Customer
+{
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#Customer .customer-title h3{
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+#Customer .customer-cards
+{
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+#Customer .customer-cards .card
+{
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    max-width: 300px;
+    transition: all 0.3s ;
+}
+
+#Customer .customer-cards .card:hover
+{
+
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+#Customer .customer-cards .card img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #c7a17a;
+}
+
+#Customer .customer-cards .card h5{
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: #3e2f1c;
+}
+
+#Customer .customer-cards .card p 
+{
+    font-size: 15px;
+    color:  #6d4c41;
+    line-height: 1.6;
+}
+
+#Media .blog-contanier
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 30px;
+    padding: 50px;
+    background-color:#a08264;
+    border-radius: 20px;
+}
+
+#Media .blog-contanier .card-Blog
+{
+    background-color: #8b704c;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+}
+
+#Media .blog-contanier .card-Blog:hover
+{
+    transform: translateY(-10px);
+}
+
+#Media .blog-contanier .card-Blog img
+{
+    object-fit: cover;
+}
+
+#Media .blog-contanier .card-Blog .info
+{
+    padding: 20px;
+    flex: 1;
+}
+#Media .blog-contanier .card-Blog .info h3{
+    margin-bottom: 10px;
+    color:  #332114;
+}
+
+#Media .blog-contanier .card-Blog .info p{
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+#Media .blog-contanier .card-Blog button
+{
+    background-color: #c0a17c;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin: 0 20px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+#Media .blog-contanier .card-Blog button:hover
+{
+    background-color: #d2b592;
+    color: #1a1a1a;
+    box-shadow: 0 0 10px #d2b59280;
+}
+
+#Beans
+{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+#Beans img 
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#Beans h2{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* color: #fff; */
+    font-size: 36px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-align: center;
+    max-width: 80%;
+}
+
+#Beans button
+{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 12px 30px;
+    background-color: #332114;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease , color 0.3s ease;
+}
+
+#Beans button:hover
+{
+    background-color: #1a1a1a;
+    color: #c0a17c;
+}
+
+
+
+footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 50px 40px 20px;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 30px;
+}
+
+.container-footer div {
+    margin-bottom: 20px;
+}
+
+.container-footer h4 {
+    margin-bottom: 10px;
+}
+
+.container-footer span
+{
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 14px;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    header {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+    header nav ul {
+    flex-direction: column;
+    gap: 15px;
+}
+    #Blog .milkshakes-contanier {
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+@media (max-width: 992px) {
+    #Menu .categories-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    #Menu .categories-container {
+        grid-template-columns: 1fr;
+    }
+}
+
